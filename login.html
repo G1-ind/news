@@ -1,0 +1,138 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&effect=shadow-multiple">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<style>
+
+.logo{
+font-family:'Rancho';
+color:Orange;
+font-size:60px;
+text-align:center;
+background:white;
+padding:25px;
+
+}
+.barbutton{
+text-decoration:none;
+font-family:'Rancho';
+color:Orange;
+font-size:20px;
+text-align:right;
+background:black;
+padding:4px 12px;
+white-space:nowrap;
+}
+.fullbar{
+background-color:black;
+padding:30px;
+color:cyan;
+}	
+div{
+    border:solid;
+    border-color:whitesmoke;
+    border-radius:5%;
+    background-color:orange;
+    object-position: center;
+    padding-top: 15px;
+    font-family:"Rancho";
+    text-align:center;
+}
+.reg{
+    font-family:"Rancho";
+    text-align:center;
+}
+.myfoot{
+color:orange;
+background:black;
+font-family:'Rancho';
+text-align:center;
+padding:35px 15px;
+}
+.sign{
+    text-decoration: none;
+
+}
+.login{
+  text-decoration:none;
+font-family:'Rancho';
+color:Orange;
+font-size:20px;
+text-align:right;
+background:black;
+padding:4px 12px;
+white-space:nowrap;
+
+}
+.registerbtn {
+  background-color:black;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.registerbtnl{
+  background-color:orange;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+</style>
+<html>
+<body>
+<h1 class="font-effect-shadow-multiple logo">DailyNewsApp</h1>
+<nav class="fullbar">
+  <a href="home.html" class="barbutton">Home</a>
+  <a href="#contact" class="barbutton">Contact</a>
+  <a href="#Reviews" class="barbutton">Reviews</a>
+  <a>
+  <form class="barbutton" action="/polls/login" method="POST">
+    {%csrf_token%}
+    <h4 class="barbutton">Email: <input name="email1" type="email"placeholder="enter your email"> Enter Password:<input name="password1" type="password" maxlength="4"placeholder="Enter password">  <button class="registerbtnl" type="submit">LogIn</button> <button class="registerbtnl"type="reset">Reset</button></h4>
+    </form></a>
+  </nav>
+<div >
+    <form action="/polls/register_insert" method="POST">
+      {%csrf_token%}
+
+        <h1 class="reg">Register</h1> 
+        <h4>Email: <input name="email" type="email"placeholder="enter your email">  Name:  <input name="name" type="text"placeholder="enter your name"></h4>
+ 
+        <h4>Create new Password:<input name="password1" type="password" maxlength="4"placeholder="new password"> Re-enter Password:<input name="password2" type="password" maxlength="4"placeholder="Re-enter password"></h4>create a password of lenth 4
+<!--<h5>Subscription Type
+        <label>
+        <select name="subtype" id="subtype">
+        <option value="None" default>Select Subscription</option>
+        <option value="weekly">Weekly[7 Days]</option>
+        <option value="quarterly">Quarterly[15 Days]</option>
+        <option value="monthly">Monthly[30 Days]</option>
+        <option value="yearly">Yearly[365 Days]</option>
+        </select>
+        </label>
+        </h5>-->
+        <h4>Address:<textarea name="address" rows="2" columns="25"placeholder="enter your address"></textarea>
+        </h4>
+        <h4>Pincode:<input name="pincode" type="number"placeholder="pincode of your location"></h4>
+        <button class="registerbtn" type="submit"name="submit">Submit</button><br>
+        Or <a class="sign" href="#signin">Sign In</a>
+        </form></div>
+        <footer class="myfoot">
+        <a href="#"><i class="fa fa-facebook-official myfoot"> </i></a>
+        <a href="#"><i class="fa fa-pinterest-p myfoot"> </i></a>
+     <a href="#"><i class="fa fa-twitter myfoot"> </i></a>
+     <a href="#"><i class="fa fa-flickr myfoot"> </i></a>
+     <a href="#"><i class="fa fa-linkedin myfoot"> </i></a>
+       <p>
+       Powered by <a href="#" target="_blank">WWW.NamskaraBengaluru.com</a>
+     </p>
+   </footer>

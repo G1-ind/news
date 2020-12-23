@@ -1,0 +1,196 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&effect=shadow-multiple">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+<link href="C:/finalp/newskart/myapp/templates/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="C:/finalp/newskart/myapp/templates/fontawesome/css/brands.css" rel="stylesheet">
+<link href="C:/finalp/newskart/myapp/templates/fontawesome/css/solid.css" rel="stylesheet">
+<style>
+
+
+h1{
+font-family:'Rancho';
+color:Orange;
+font-size:60px;
+text-align:left;
+background:white;
+padding:25px;
+
+}
+.barbutton{
+text-decoration:none;
+font-family:'Rancho';
+color:black;
+font-size:20px;
+background:orange;
+padding:4px 12px;
+white-space:inherit;
+
+}
+.fullbar{
+background-color:orange;
+padding:30px;
+color:cyan;
+
+}	
+.paper {
+    background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: Rancho;
+  color: aliceblue;
+}
+.picture{
+    width:250px;
+    height:125px; 
+
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.paper button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color:black;
+  background-color:orange;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.paper button:hover {
+  opacity: 0.7;
+  box-shadow:grey;
+}
+.cloumn {
+  float: left;
+  width: 24%;
+  padding: 0 10px;
+  
+}
+.cloumn:hover{
+    transform: scale(1.05);
+}
+
+/* Remove extra left and right margins, due to padding */
+/*.row {margin: 5px -5px;}*/
+.row{
+    display: flex;
+    align-items:center ;
+}
+/* Clear floats after the columns */
+.row:after {
+  content:"";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .cloumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.myfoot{
+color:orange;
+object-position: center;
+background:black;
+font-family:'Rancho';
+text-align:center;
+padding:35px 15px;
+}
+.logos{
+    text-align: center;
+}
+.dropbtn {
+  background-color:orange;
+  color:black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:orange;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:orange}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:orange;
+}
+
+</style>
+<html>
+<body>
+<h1 class="font-effect-shadow-multiple logo">DailyNewsApp</h1>
+<nav class="fullbar">
+    <a href="#" class="barbutton">Magazine</a>
+    <a href="#tour" class="barbutton">Active Subscriptions</a>
+    <a  style="float: right;">{{user.name}}</a>
+    <a href="/polls/logout" class="barbutton" style="float: right;"><i class="fas fa-sign-out-alt"></i></a>
+    </nav>
+      {%for data in prod%}
+        <div class="paper">
+            <img class="picture" src="{{data.img_url}}" alt="{{data.prod_name}}" >
+            <h4>{{data.prod_name}}</h4>
+            <h5 class="dropdown">
+                <label >
+                <select name="subtype" id="subtype"class="dropbtn">
+                <option class="dropdown-content" value="None" default>Select Subscription</option>
+                <option class="dropdown-content" value="weekly">7 Days - ₹{{data.weekly}}</option>
+                <option class="dropdown-content" value="quarterly">30 Days - ₹{{data.monthly}} </option>
+                <option class="dropdown-content" value="monthly">90 Days - ₹{{data.quarterly}}</option>
+                <option class="dropdown-content" value="yearly">365 Days - ₹{{data.yearly}}</option>
+                </select>
+                </label>
+                </h5>
+            <p>{{data.about}}</p>
+            <p><button>Subscribe Now</button></p>
+        </div>
+    </div>
+    {%endfor%}
+    
+<footer class="myfoot">
+    <a href="https://www.facebook.com/Jeans.1999"><i class="fab fa-facebook logos"></i></a>
+     <a href="https://www.instagram.com/g_one_p.h.o.t.o.g.r.a.p.h.y/"><i class="fab fa-instagram logos"> </i></a>
+    <a><i class="fab fa-amazon-pay"></i></a>
+     <a><i class="fab fa-cc-visa"></i></a>
+    <a><i class="fab fa-google-pay"></i></a>
+   <p>
+    <i class="fas fa-copyright"></i><a href="#" target="_blank" style="text-decoration: none;color:whitesmoke">  www.NamskaraBengaluru.com</a>
+ </p>
+</footer>
+
+

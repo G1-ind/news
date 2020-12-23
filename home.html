@@ -1,0 +1,124 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&effect=shadow-multiple">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+{%load static%}
+<style>
+
+h1{
+font-family:'Rancho';
+color:Orange;
+font-size:60px;
+text-align:center;
+background:white;
+padding:25px;
+
+}
+.barbutton{
+text-decoration:none;
+font-family:'Rancho';
+color:Orange;
+font-size:20px;
+text-align:right;
+background:black;
+padding:4px 12px;
+white-space:nowrap;
+}
+div{
+ font-family:"Constantia";
+}
+.fullbar{
+background-color:black;
+padding:30px;
+color:cyan;
+}	
+.myfoot{
+color:orange;
+background:black;
+font-family:'Rancho';
+text-align:center;
+padding:35px 15px;
+}
+
+
+</style>
+<html>
+<body>
+<h1 class="font-effect-shadow-multiple">DailyNewsApp</h1>
+<nav class="fullbar">
+  <a href="https://www.google.com/" class="barbutton">Home</a>
+  <a href="/polls/viewLogin" class="barbutton">Login/SignIn</a>
+  <a href="#tour" class="barbutton">Reviews</a>
+  <a href="#contact" class="barbutton">Contact</a>
+  <a href="#Reviews" class="barbutton">Reviews</a>
+  <a href="#Reviews" class="barbutton">{{name}}</a>
+</nav>
+<section>
+<img class="mySlides" src="https://images.yourstory.com/cs/2/b87effd0-6a66-11e9-ad33-3f8a4777438f/Bangalore-and-Fintech1560941267387.png?fm=png&auto=format&ar=2:1&mode=crop&crop=face" style="width:100% "alt="abc">
+  <img class="mySlides" src="https://drive.google.com/uc?export=download&id=12q6xEv1QeU85dZjbGdWZuajsB0LyowU5" style="width:100%  ">
+  <img class="mySlides" src="{%static 'img/mag2.jpg'%}" style="width:100% ">
+   <img class="mySlides" src="{%static 'img/mag4.jpg'%}" style="width:100% ">
+</section>
+<!--<div >
+<h2 class="font-effect-shadow-multiple">Register<h6>Or Sign In</h6></h2>
+<h5>FirstName:  <input type="text"placeholder="enter your name">  MiddleName: <input type="text"></h5>
+<h5>Gender: 
+<label>
+<input type="radio" id="male" value="male"  name="gender">Male
+</label>
+<label>
+<input type="radio" id="female"value="female"  name="gender">Female 
+</label>
+ <label>
+<input type="radio" id="other"value="other"  name="gender">Other
+</label>
+</h5>
+<h5>Subscription Type
+<label>
+<select name="subtype" id="subtype">
+<option value="None" default>Select Subscription</option>
+<option value="weekly">Weekly[7 Days]</option>
+<option value="quarterly">Quarterly[15 Days]</option>
+<option value="monthly">Monthly[30 Days]</option>
+<option value="yearly">Yearly[365 Days]</option>
+</select>
+</label>
+</h5>
+<h5>Address:<textarea rows="2" columns="25"placeholder="enter your address"></textarea>
+</h5>
+<button type="submit"name="submit">Submit</button></div>-->
+<div>
+<h4>About Us</h4>
+<p>The Times of India (TOI) is an Indian English-language daily newspaper and digital news media owned and managed by The Times Group. ... <br>In 1991, the BBC ranked The Times of India among the world's six best newspapers. It is owned and published by Bennett, Coleman & Co. Ltd.</p>
+<footer class="myfoot">
+ <a href="#"><i class="fab fa-facebook-f myfoot"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p myfoot"> </i></a>
+  <a href="#"><i class="fa fa-twitter myfoot"> </i></a>
+  <a href="#"><i class="fa fa-flickr myfoot"> </i></a>
+  <a href="#"><i class="fa fa-linkedin myfoot"> </i></a>
+	<p>
+    Powered by <a href="#https://www.w3schools.com/w3css/default.asp" target="_blank">WWW.NamskaraBengaluru.com</a>
+  </p>
+</footer>
+
+</body>
+<script>
+ var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+</html>
